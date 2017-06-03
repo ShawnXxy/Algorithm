@@ -4,6 +4,13 @@ import java.util.Dictionary;
 
 public class SearchInUnknownSizedSortedArray {
 	
+	/**
+	 * 
+	 * Time: 
+	 * 		In binarySearch(), O(log_2(%times%*n), in this case, O(log_2(5n));
+	 * 		In search(), O(log_5(n))
+	 */
+	
 	public int search (Dictionary dict, int target) {
 		if (dict == null) {
 			return -1;
@@ -12,7 +19,7 @@ public class SearchInUnknownSizedSortedArray {
 		int right = 1;
 		while (dict.get(right) != null && (int) dict.get(right) < target) {
 			left = right;
-			right = 5 * right;
+			right = 5 * right; // could be 2 times, 10 times
 		}
 		return binarySearch(dict, target, left, right);
 	}

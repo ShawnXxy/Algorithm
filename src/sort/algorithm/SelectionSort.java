@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Complexity Analysis:
  * Space:
- * Time: 
+ * Time: O(n^2)
  * @author ShawnX
  *
  */

@@ -2,6 +2,10 @@ package binarysearch.algorithm;
 
 public class KClosestInSortedArray {
 	
+	/**
+	 * Time: O(logn + k)
+	 * 
+	 */
 	public int[] kClosest (int[] array, int k, int target) {
 		if (array == null || array.length == 0 || array.length < k || k == 0) {
 			return new int[0];

@@ -2,6 +2,12 @@ package binarysearch.algorithm;
 
 public class ClassicalBinarySearch {
 	
+	/**
+	 * Space: O(1)
+	 * Time: O(logn)
+	 * 
+	 */
+	
 	public int binarySearch (int[] array, int target) {
 		if (array == null || array.length == 0) {
 			return -1;

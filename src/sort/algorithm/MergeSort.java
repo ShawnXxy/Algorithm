@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 public class MergeSort {
 	
+	/**
+	 * Space: O(n)
+	 * Time: O(nlogn)
+	 * 
+	 */
+	
 	public int[] mergeSort(int[] array) {
 		if (array == null) return array;
 		int[] helper = new int[array.length];

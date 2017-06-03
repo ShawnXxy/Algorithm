@@ -6,6 +6,8 @@ public class SearchInSortedMatrixI {
 	 * Search in sorted matrix, each row of the matrix is sorted in ascending	/order, 
 	 * and the first element of the row is equals to or larger than the last element of the previous row
 	 * 
+	 * Time: O(lognm) since n rows and m cols
+	 * Space: O(1)
 	 */
 
 	public int[] search(int[][] matrix, int target) {
