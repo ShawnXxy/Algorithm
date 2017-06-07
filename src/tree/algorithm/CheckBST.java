@@ -21,10 +21,10 @@ public class CheckBST {
 		if (root == null) {
 			return true;
 		}
-		if (root.key < min || root.key > max) {
+		if (root.key <= min || root.key >= max) {
 			return false;
 		}
-		return isBST(root.left, min, root.key - 1) && isBST(root.right, root.key + 1, max);
+		return isBST(root.left, min, root.key) && isBST(root.right, root.key, max);
 	}
 	
 	public static void main(String[] args) {
