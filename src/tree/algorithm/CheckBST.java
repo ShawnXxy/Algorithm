@@ -2,6 +2,10 @@ package tree.algorithm;
 
 public class CheckBST {
 	
+	/*
+	 * Time: O(
+	 */
+	
 	class TreeNode {
 		public int key;
 		public TreeNode left;

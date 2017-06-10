@@ -14,6 +14,8 @@ public class ReverseLinkedList {
 	public ListNode reverse (ListNode head) {
 		
 		// Solution 1: iterative
+		// Time: O(n)
+		// Space: O(1)
 		ListNode prev = null;
 		while (head != null) {
 			ListNode nextNode = head.next;
@@ -24,6 +26,8 @@ public class ReverseLinkedList {
 		return prev;
 		
 		// Solution 2: recurstion
+		// Time: O(n)
+		// Space: O(n)
 //		if (head == null || head.next == null) {
 //			return head;
 //		}

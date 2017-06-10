@@ -9,6 +9,7 @@ public class LayerTraverseBinaryTree {
 	
 	/**
 	 * Time: O(n) : iterative n nodes
+	 * Space: O(n) as for worst case, all nodes in one layer and so q.size() = n
 	 * @author ShawnX
 	 *
 	 */
