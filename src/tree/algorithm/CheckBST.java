@@ -3,7 +3,8 @@ package tree.algorithm;
 public class CheckBST {
 	
 	/*
-	 * Time: O(
+	 * Time: O(n)
+	 * Space O(height)
 	 */
 	
 	class TreeNode {
