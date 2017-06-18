@@ -9,6 +9,8 @@ public class AllSubSetI {
 	 * Given a set of characters represented by a String, return a list containing all subsets of the characters.
 	 * 
 	 * Time: O(2^n) as for n levels and two cases for each level (2 + 2^2 + 2 ^3 + 2^4 + ..... + 2^n)
+	 * 				each level represents an element in input,
+	 * 				each tree branch represents add or not add current element in to result as a subset
 	 * Space: O(n) 
 	 */
 	

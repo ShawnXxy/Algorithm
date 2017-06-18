@@ -15,7 +15,7 @@ public class Deduplicate {
 		int slow = 1;
 		for (int fast = 1; fast < arrayInput.length; fast++) {
 			// slow and fast pointer iterates each elements in char array. 
-			// If fast == slow, fast pointer keeps moving while slow pointer dont move
+			// If fast == slow, fast pointer keeps moving while slow pointer don't move
 			// if fast != slow, copy fast value to slow++
 			if (arrayInput[fast] != arrayInput[slow - 1]) {
 				arrayInput[slow++] = arrayInput[fast];
