@@ -1,4 +1,4 @@
-package binarysearch.algorithm;
+ package binarysearch.algorithm;
 
 public class ClassicalBinarySearch {
 	

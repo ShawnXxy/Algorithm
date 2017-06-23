@@ -11,6 +11,22 @@ public class MaxProductOfCuttingRope {
 	 * 
 	 */
 	
+	public int maxProduct(int n) {
+		// result[] represents largest possible product at i meters
+		int[] result = new int[n + 1];
+		// if 0 meter, product is 0
+		result[0] = 0;
+		// if 1 meter, product is 1 as no need to cut
+		result[1] =  1;
+		for (int length = 2; length <= n; length++) { // length represents length of rope
+			int product = 1;
+			for (int cut = 1; cut < length; cut++) { // cut represents how long current cut at and it will start at 1 meter
+				product = Math.max(product, Math.max(cut, result[cut]) * Math.max(length - cut, result[length - cut]));
+			}
+		}
+		return result[n];
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

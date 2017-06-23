@@ -77,7 +77,9 @@ public class KthSmallestInSortedMatrix {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		KthSmallestInSortedMatrix solution = new KthSmallestInSortedMatrix();
+		// test case 1
+	
 	}
 
 }
