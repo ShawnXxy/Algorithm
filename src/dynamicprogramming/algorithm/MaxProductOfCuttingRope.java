@@ -21,6 +21,9 @@ public class MaxProductOfCuttingRope {
 		for (int length = 2; length <= n; length++) { // length represents length of rope
 			int product = 1;
 			for (int cut = 1; cut < length; cut++) { // cut represents how long current cut at and it will start at 1 meter
+				// 左大段右小段
+				// product = Math.max(product, cut * Math.max(length - cut, result[length - cut]));
+				// 左大段又大段
 				product = Math.max(product, Math.max(cut, result[cut]) * Math.max(length - cut, result[length - cut]));
 			}
 		}

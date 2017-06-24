@@ -54,13 +54,11 @@ public class KthSmallestInSortedMatrix {
 				}
 			}
 		});
-		
 		// created a boolean array to store visited cells so to avoid a cell being generated more than once
 		boolean[][] visited = new boolean[rows][cols];
 		// starts from the first cell in matrix which is matrix[0][0]
 		minHeap.offer(new Cell(0, 0, matrix[0][0]));
 		visited[0][0] = true;
-		
 		for (int i = 0; i < k - 1; i++) { // loop stops when i = k - 1. From 0 to k-1, k-1 is the kth
 			Cell cur = minHeap.poll();
 			if (cur.row + 1 < rows && !visited[cur.row + 1][cur.col]) {
