@@ -26,11 +26,9 @@ public class SearchInBST {
 		// Solution 2: Iterative
 		TreeNode cur = root;
 		while (cur != null && cur.value != target) {
-			if (cur.value == target) {
-				return cur;
-			} else if (cur.value < target) {
+			if (cur.value < target) {
 				cur = cur.right;
-			} else if (cur.value > target) {
+			} else {
 				cur = cur.left;
 			}
 		}

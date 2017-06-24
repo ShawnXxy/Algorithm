@@ -19,16 +19,16 @@ public class AllSubSetI {
 		if (input == null ) {
 			return result;
 		}
-		char[] arrayInput = input.toCharArray();
+//		char[] arrayInput = input.toCharArray();
 		StringBuilder newString = new StringBuilder();
-		helper(arrayInput, newString, 0, result);
+		helper(input, newString, 0, result);
 		return result;
 	}
-	private void helper(char[] arrayInput, StringBuilder newString, int index, List<String> result) {
+	private void helper(String input, StringBuilder newString, int index, List<String> result) {
 		result.add(newString.toString());
-		for (int i = index; i < arrayInput.length; i++) {
-			newString.append(arrayInput[i]);
-			helper(arrayInput, newString, i + 1, result);
+		for (int i = index; i < input.length(); i++) {
+			newString.append(input.charAt(i));
+			helper(input, newString, i + 1, result);
 			newString.deleteCharAt(newString.length() - 1);
 		}
 	}
