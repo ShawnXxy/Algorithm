@@ -20,7 +20,7 @@ public class PerfectShuffle {
 		// i = 51, p = 1 / 52;
 		
 		for (int i = 0; i < cards.length; i++) {
-			int probIdx = (int) (Math.random() * i); 
+			int probIdx = (int) (Math.random() * i);  // generate 0, 1, 2, 3, ..., i - 1 randomly;
 			swap(cards, probIdx + 1, i);
 		}
 		
