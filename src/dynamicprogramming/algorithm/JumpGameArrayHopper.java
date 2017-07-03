@@ -34,7 +34,27 @@ public class JumpGameArrayHopper {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		JumpGameArrayHopper solution = new JumpGameArrayHopper();
+		// test case 1:
+		int[] array = null;
+		boolean result = solution.jump(array);
+		System.out.println(result);
+		// test case 2:
+		array = new int[0];
+		result = solution.jump(array);
+		System.out.println(result);
+		// test case 3:
+		array = new int[] {0, 1, 2, 3, 4, 5};
+		result = solution.jump(array);
+		System.out.println(result);
+		// test case 4:
+		array = new int[] {5, 4, 3, 2, 1, 0};
+		result = solution.jump(array);
+		System.out.println(result);
+		// test case 5:
+		array = new int[] {2, 3, 1, 0, 2, 1, 4};
+		result = solution.jump(array);
+		System.out.println(result);
 	}
 
 }

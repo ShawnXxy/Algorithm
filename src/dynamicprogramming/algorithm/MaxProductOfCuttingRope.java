@@ -22,17 +22,34 @@ public class MaxProductOfCuttingRope {
 			int product = 1;
 			for (int cut = 1; cut < length; cut++) { // cut represents how long current cut at and it will start at 1 meter
 				// 左大段右小段
-				// product = Math.max(product, cut * Math.max(length - cut, result[length - cut]));
+				 product = Math.max(product, cut * Math.max(length - cut, result[length - cut]));
 				// 左大段又大段
-				product = Math.max(product, Math.max(cut, result[cut]) * Math.max(length - cut, result[length - cut]));
+//				product = Math.max(product, Math.max(cut, result[cut]) * Math.max(length - cut, result[length - cut]));
 			}
+			result[length] = product;
 		}
 		return result[n];
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		MaxProductOfCuttingRope solution = new MaxProductOfCuttingRope();
+		// test case 1:
+		int n = 1;
+		int result = solution.maxProduct(n);
+		System.out.println(result);
+		// test case 2:
+		n = 2;
+		result = solution.maxProduct(n);
+		System.out.println(result);
+		// test case 2:
+		n = 20;
+		result = solution.maxProduct(n);
+		System.out.println(result);
+		// test case 2:
+		n = 200;
+		result = solution.maxProduct(n);
+		System.out.println(result);
 	}
 
 }

@@ -29,7 +29,27 @@ public class ClassicalBinarySearch {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		ClassicalBinarySearch solution = new ClassicalBinarySearch();
+		// test case 1:
+		int[] array = null;
+		int target = 5;
+		int result = solution.binarySearch(array, target);
+		System.out.println(result);
+		// test case 2:
+		array = new int[0];
+		target = 5;
+		result = solution.binarySearch(array, target);
+		System.out.println(result);
+		// test case 3:
+		array = new int[] {2, 4, 6, 8, 10};
+		target = 5;
+		result = solution.binarySearch(array, target);
+		System.out.println(result);
+		// test case 4:
+		array = new int[] {2, 4, 5, 6, 8, 10};
+		target = 5;
+		result = solution.binarySearch(array, target);
+		System.out.println(result);
 	}
 
 }

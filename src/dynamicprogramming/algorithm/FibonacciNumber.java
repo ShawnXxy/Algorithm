@@ -23,7 +23,19 @@ public class FibonacciNumber {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		FibonacciNumber solution = new FibonacciNumber();
+		// test case 1:
+		int k = 10;
+		long result = solution.fibonacci(k);
+		System.out.println(result);
+		// test case 2:
+		k = 0;
+		result = solution.fibonacci(k);
+		System.out.println(result);
+		// test case 2:
+		k = 1;
+		result = solution.fibonacci(k);
+		System.out.println(result);
 	}
 
 }

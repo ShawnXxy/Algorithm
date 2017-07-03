@@ -27,7 +27,17 @@ public class ClosestInSortedArray {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		ClosestInSortedArray solution = new ClosestInSortedArray();
+		// test case 1:
+		int[] array = new int[] {2, 4, 6, 8, 10};
+		int target = 5;
+		int result = solution.closest(array, target);
+		System.out.println(result);
+		// test case 2:
+		array = new int[] {2, 4, 5, 6, 8, 10};
+		target = 5;
+		result = solution.closest(array, target);
+		System.out.println(result);
 	}
 
 }

@@ -21,7 +21,11 @@ public class Power {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Power solution = new Power();
+		// test case 1:
+		int a = 23, b = 234;
+		long result = solution.power(a, b);
+		System.out.println(result);
 	}
 
 }
