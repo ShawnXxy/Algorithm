@@ -1,6 +1,6 @@
 package dynamicprogramming.algorithm;
 
-public class JumpGameArrayHopper {
+public class JumpGameArrayHopperI {
 
 	/*
 	 * Given an array A of non-negative integers, you are initially positioned
@@ -34,7 +34,7 @@ public class JumpGameArrayHopper {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		JumpGameArrayHopper solution = new JumpGameArrayHopper();
+		JumpGameArrayHopperI solution = new JumpGameArrayHopperI();
 		// test case 1:
 		int[] array = null;
 		boolean result = solution.jump(array);
