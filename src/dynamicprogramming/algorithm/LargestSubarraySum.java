@@ -17,10 +17,24 @@ public class LargestSubarraySum {
 //		}
 		int cur = array[0];
 		int longest = array[0];
+		int start = 0;
+		int globalStart = 0, globalEnd = 0;
 		for (int i = 1; i < array.length; i++) {
-			cur = Math.max(array[i], cur + array[i]);
-			longest = Math.max(cur, longest);
+//			cur = Math.max(array[i], cur + array[i]);
+			if (cur + array[i] > array[i]) {
+				cur = array[i] + cur;
+			} else {
+				cur = array[i];
+				start = i;
+			}
+//			longest = Math.max(cur, longest);
+			if (longest < cur) {
+				longest = cur;
+				globalStart = start;
+				globalEnd = i;
+			}
 		}
+		System.out.println("Largest Subarray starts from index of " + globalStart + " and ends in index of " + globalEnd);
 		return longest;
 	}
 
