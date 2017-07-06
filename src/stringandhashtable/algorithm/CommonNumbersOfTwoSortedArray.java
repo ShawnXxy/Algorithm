@@ -21,7 +21,7 @@ public class CommonNumbersOfTwoSortedArray {
 //				i++;
 //				j++;
 //			} else if (a.get(i) < b.get(j)) {
-//				i++;
+//				i++; 
 //			} else {
 //				j++;
 //			}
