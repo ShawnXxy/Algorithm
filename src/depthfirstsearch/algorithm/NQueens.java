@@ -9,33 +9,35 @@ public class NQueens {
 	 * Get all valid ways of putting N Queens on an N * N chessboard so that no two Queens threaten each other.
 	 */
 	
-	public List<List<Integer>> queen (int n) {
+	public List<List<Integer>> queen(int n) {
 		List<List<Integer>> result = new ArrayList<>();
 		List<Integer> cur = new ArrayList<>();
-		helper(n, cur, result);
+		helper(n, result, cur);
 		return result;
 	}
-	private void helper(int n, List<Integer> cur, List<List<Integer>> result) {
-		 if (cur.size() == n) {
-			 result.add(new ArrayList<Integer>(cur));
-		 }
-		 for (int i = 0; i < n; i++) {
-			 if (valid(cur, i)) {
-				 cur.add(i);
-				 helper(n, cur, result);
-				 cur.remove(cur.size() - 1);
-			 }
-		 }
+	private void helper(int n, List<List<Integer>> result, List<Integer> cur) {
+		if (cur.size() == n) {
+			result.add(new ArrayList<Integer>(cur));
+			return;
+		}
+		for (int i = 0; i < n; i++) {
+			if (valid(cur, i)) {
+				cur.add(i);
+				helper(n, result, cur);
+				cur.remove(cur.size() - 1);
+			}
+		}
 	}
-	private boolean valid(List<Integer> cur, int column) {
+	private boolean valid(List<Integer> cur, int col) {
 		int row = cur.size();
 		for (int i = 0; i < row; i++) {
-			if (cur.get(i) == column || Math.abs(cur.get(i) - column) == row - i) {
+			if (cur.get(i) == col || Math.abs(cur.get(i) - col) == row - i) {
 				return false;
 			}
 		}
 		return true;
 	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

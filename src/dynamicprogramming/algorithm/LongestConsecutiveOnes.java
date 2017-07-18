@@ -6,21 +6,21 @@ public class LongestConsecutiveOnes {
 	 *  Given an array containing only 0s and 1s, find the length of the longest subarray of consecutive 1s.
 	 */
 	
-	public int longest(int[] array) {
+	public int longest (int[] array) {
 		if (array == null || array.length == 0) {
 			return 0;
 		}
-		int cur = 0; 
-		int longest = 0;
+		int cur = 0;
+		int result = 0;
 		for (int i = 0; i < array.length; i++) {
 			if (array[i] == 1) {
 				cur++;
-				longest = Math.max(cur, longest);
+				result = Math.max(cur, result);
 			} else {
 				cur = 0;
 			}
 		}
-		return longest;
+		return result;
 	}
 
 	public static void main(String[] args) {

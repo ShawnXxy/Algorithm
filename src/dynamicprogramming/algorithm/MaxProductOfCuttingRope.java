@@ -12,21 +12,17 @@ public class MaxProductOfCuttingRope {
 	 */
 	
 	public int maxProduct(int n) {
-		// result[] represents largest possible product at i meters
-		int[] result = new int[n + 1];
-		// if 0 meter, product is 0
+		int[] result = new int[n + 1]; // result[i] represents max product at ith meters of rope
+		// no cut
 		result[0] = 0;
-		// if 1 meter, product is 1 as no need to cut
-		result[1] =  1;
-		for (int length = 2; length <= n; length++) { // length represents length of rope
-			int product = 1;
-			for (int cut = 1; cut < length; cut++) { // cut represents how long current cut at and it will start at 1 meter
-				// 左大段右小段
-				 product = Math.max(product, cut * Math.max(length - cut, result[length - cut]));
-				// 左大段又大段
-//				product = Math.max(product, Math.max(cut, result[cut]) * Math.max(length - cut, result[length - cut]));
+		// length is 1 meter, no cut
+		result[1] = 1;
+		for (int len = 2; len <= n; len++) { // len represents current length is len meters
+			int product = 0;
+			for (int cut = 1; cut <= len; cut++) { // cut represents current cutted length
+				product = Math.max(product, cut * Math.max(len - cut, result[len - cut]));
 			}
-			result[length] = product;
+			result[len] = product;
 		}
 		return result[n];
 	}
@@ -43,11 +39,11 @@ public class MaxProductOfCuttingRope {
 		result = solution.maxProduct(n);
 		System.out.println(result);
 		// test case 2:
-		n = 20;
+		n = 5;
 		result = solution.maxProduct(n);
 		System.out.println(result);
 		// test case 2:
-		n = 200;
+		n = 10;
 		result = solution.maxProduct(n);
 		System.out.println(result);
 	}

@@ -22,9 +22,9 @@ public class LayerTraverseBinaryTree {
 			this.key = key;
 		}
 	}
-
-	public List<List<Integer>> getNodesLayerByLayer (TreeNode root) {
-		List<List<Integer>>  result = new ArrayList<>();
+	
+	public List<List<Integer>> layerByLayer (TreeNode root) {
+		List<List<Integer>> result = new ArrayList<>();
 		if (root == null) {
 			return result;
 		}
@@ -35,13 +35,13 @@ public class LayerTraverseBinaryTree {
 			int size = q.size();
 			for (int i = 0; i < size; i++) {
 				TreeNode cur = q.poll();
+				layer.add(cur.key);
 				if (cur.left != null) {
 					q.offer(cur.left);
 				}
 				if (cur.right != null) {
 					q.offer(cur.right);
 				}
-				layer.add(cur.key);
 			}
 			result.add(layer);
 		}

@@ -15,25 +15,25 @@ public class AllPermutationII {
 		if (input == null) {
 			return result;
 		}
-		char[] arrayInput = input.toCharArray();
-		helper(arrayInput, 0, result);
+		char[] inputArray = input.toCharArray();
+		helper(inputArray, 0, result);
 		return result;
 	}
-	private void helper(char[] arrayInput, int index, List<String> result) {
-		if (index == arrayInput.length) {
-			result.add(new String(arrayInput));
+	private void helper (char[] inputArray, int index, List<String> result) {
+		if (index == inputArray.length - 1) {
+			result.add(new String(inputArray));
 		}
 		HashSet<Character> used = new HashSet<>();
-		for (int i = index; i < arrayInput.length; i++) {
-			if (!used.contains(arrayInput[i])) {
-				used.add(arrayInput[i]);
-				swap(arrayInput, index, i);
-				helper(arrayInput, index + 1, result);
-				swap(arrayInput, index, i);
+		for (int i = index; i < inputArray.length; i++) {
+			if (!used.contains(inputArray[i])) {
+				used.add(inputArray[i]);
+				swap(inputArray, i, index);
+				helper(inputArray, index + 1, result);
+				swap(inputArray, i, index);
 			}
 		}
 	}
-	private void swap(char[] array, int a, int b) {
+	private void swap (char[] array, int a, int b) {
 		char temp = array[a];
 		array[a] = array[b];
 		array[b] = temp;
@@ -41,7 +41,11 @@ public class AllPermutationII {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		AllPermutationII solution = new AllPermutationII();
+		// test case 1:
+		String input = "abbc";
+		List<String> result = solution.permutation(input);
+		System.out.println(result);
 	}
 
 }

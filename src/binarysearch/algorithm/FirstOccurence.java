@@ -9,19 +9,19 @@ public class FirstOccurence {
 		int left = 0;
 		int right = array.length - 1;
 		while (left < right - 1) {
-			int mid = left + (right - left) / 2;
+			int mid = (left + right) / 2;
 			if (array[mid] == target) {
 				right = mid;
 			} else if (array[mid] < target) {
-				left = mid + 1; 
+				left = mid;
 			} else {
-				right = mid - 1;
+				right = mid;
 			}
 		}
 		if (array[left] == target) {
 			return left;
-		}
-		if (array[right] == target) {
+		} 
+		if (array[right] == target){
 			return right;
 		}
 		return -1;

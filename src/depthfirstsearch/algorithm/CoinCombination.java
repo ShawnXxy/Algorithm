@@ -3,7 +3,7 @@ package depthfirstsearch.algorithm;
 import java.util.ArrayList;
 import java.util.List;
 
-public class coinCombination {
+public class CoinCombination {
 
 			/*
 			 * Given a number of different denominations of coins (e.g., 1 cent, 5 cents, 10 cents, 25 cents), get all the possible ways to pay a target number of cents.
@@ -43,34 +43,37 @@ public class coinCombination {
 	 * 
 	 */
 	
-	public List<List<Integer>> coinsCombination(int target, int[] coins) {
+	public List<List<Integer>> combo (int[] coins, int target) {
 		List<List<Integer>> result = new ArrayList<>();
-		if (coins == null || coins.length == 0) {
-			return result;
-		}
 		List<Integer> curVal = new ArrayList<>();
-		helper(target, coins, 0, result, curVal);
+		helper(coins, target, 0, result, curVal);
 		return result;
 	}
-	private void helper(int target, int[] coins, int index, List<List<Integer>> result, List<Integer> curVal) {
+	private void helper(int[] coins, int target, int index, List<List<Integer>> result, List<Integer> curVal) {
 		if (index == coins.length - 1) {
 			if (target % coins[coins.length - 1] == 0) {
 				curVal.add(target / coins[coins.length - 1]);
 				result.add(new ArrayList<Integer>(curVal));
 				curVal.remove(curVal.size() - 1);
 			}
+			return;
 		}
 		int max = target / coins[index];
 		for (int i = 0; i <= max; i++) {
 			curVal.add(i);
-			helper(target - i * coins[index], coins, index + 1, result, curVal);
+			helper(coins, target - i * coins[index], index + 1, result, curVal);
 			curVal.remove(curVal.size() - 1);
 		}
 	}
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		CoinCombination solution = new CoinCombination();
+		// test case 1:
+		int[] coins =  new int[] {1, 5, 10, 25};
+		int target = 25;
+		List<List<Integer>> result = solution.combo(coins, target);
+		System.out.println(result);
 	}
 
 }

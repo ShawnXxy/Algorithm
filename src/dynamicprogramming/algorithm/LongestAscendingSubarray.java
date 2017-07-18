@@ -10,20 +10,18 @@ public class LongestAscendingSubarray {
 		if (array == null || array.length == 0) {
 			return 0;
 		}
-		// initialize to 1 as the length will be 1 if no ascending order
-		int count = 1;
+		int cur = 1;
 		int result = 1;
 		for (int i = 1; i < array.length; i++) {
 			if (array[i] > array[i - 1]) {
-				count++;
-				result = Math.max(count, result);
+				cur++;
+				result = Math.max(result, cur);
 			} else {
-				count = 1;
+				cur = 1;
 			}
 		}
 		return result;
 	}
-	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

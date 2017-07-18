@@ -10,32 +10,37 @@ public class SearchInSortedMatrixI {
 	 * Space: O(1)
 	 */
 
-	public int[] search(int[][] matrix, int target) {
+	public int[] search (int[][] matrix, int target) {
 		if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-			return new int[] { -1, -1 };
+			return new int[] {-1, -1};
 		}
-		int row = matrix.length;
-		int col = matrix[0].length;
-		int left = 0;
-		int right = row * col - 1;
-		while (left <= right) {
-			int mid = left + (right - left) / 2;
-			int i = mid / col;
-			int j = mid % col;
-			if (matrix[i][j] == target) {
-				return new int[] { i, j };
-			} else if (matrix[i][j] < target) {
-				left = mid + 1;
+		int rows = matrix.length;
+		int cols = matrix[0].length;
+		int start = 0;
+		int end = rows * cols - 1;
+		while (start <= end) {
+			int mid = (start + end) / 2;
+			int row = mid / cols;
+			int col = mid % cols;
+			if (matrix[row][col] == target) {
+				return new int[] {row, col};
+			} else if (matrix[row][col] < target) {
+				start = mid + 1;
 			} else {
-				right = mid - 1;
+				end = mid - 1;
 			}
 		}
-		return new int[] { -1, -1 };
+		return new int[] {-1, -1};
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		SearchInSortedMatrixI solution = new SearchInSortedMatrixI();
+		// test case 1:
+		int[][] matrix = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+		int target = 5;
+		int[] result = solution.search(matrix, target);
+		System.out.println(result);
 	}
 
 }

@@ -10,28 +10,8 @@ import java.util.Arrays;
  *
  */
 public class SelectionSort {
-	public int[] selectionSort (int[] array) {
-		if (array == null || array.length == 0) {
-			return array;
-		}
-		int min;
-		for (int i = 0; i < array.length; i++) {
-			min = i;
-			for (int j = i + 1; j < array.length; j++) {
-				if (array[min] > array[j]) {
-					min = j;
-				}
-			}
-			swap(array, min, i);
-		}
-		return array;
-	}
 	
-	private void swap (int[] array, int a, int b) {
-		int temp = array[a];
-		array[a] = array[b];
-		array[b] = temp;
-	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

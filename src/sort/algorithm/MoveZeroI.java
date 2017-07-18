@@ -4,43 +4,10 @@ import java.util.Arrays;
 
 public class MoveZeroI {
 
-	// Move 0s to the end
-	public int[] moveZero(int[] array) {
-		if (array == null || array.length <= 1) {
-			return array;
-		}
-
-		// Solution 1: order changed
-		int nonZero;
-		for (int i = 0; i < array.length; i++) {
-			nonZero = i;
-			for (int j = i + 1; j < array.length; j++) {
-				if (array[j] != 0) {
-					nonZero = j;
-				}
-			}
-			swap(array, nonZero, i);
-		}
-
-		// Solution 2: order not changed
-		int index = 0;
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] != 0) {
-				array[index++] = array[i];
-			}
-		}
-		for (int j = index; j < array.length; j++) {
-			array[j] = 0;
-		}
-
-		return array;
-	}
-
-	private void swap(int[] array, int a, int b) {
-		int temp = array[a];
-		array[a] = array[b];
-		array[b] = temp;
-	}
+	/*
+	 * Move 0s to the end
+	 */
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

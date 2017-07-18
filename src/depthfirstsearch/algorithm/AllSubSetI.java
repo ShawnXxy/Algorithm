@@ -14,28 +14,33 @@ public class AllSubSetI {
 	 * Space: O(n) 
 	 */
 	
-	public List<String> subset (String input) {
+	public List<String> subset(String input) {
 		List<String> result = new ArrayList<>();
-		if (input == null ) {
+		if (input == null) {
 			return result;
 		}
-//		char[] arrayInput = input.toCharArray();
 		StringBuilder newString = new StringBuilder();
-		helper(input, newString, 0, result);
+		helper (input, result, newString, 0);
 		return result;
 	}
-	private void helper(String input, StringBuilder newString, int index, List<String> result) {
-		result.add(newString.toString());
+	private void helper(String input, List<String> result, StringBuilder newString, int index) {
+		if (index == input.length()) {
+			result.add(newString.toString());
+		}
 		for (int i = index; i < input.length(); i++) {
 			newString.append(input.charAt(i));
-			helper(input, newString, i + 1, result);
+			helper (input, result, newString, i + 1);
 			newString.deleteCharAt(newString.length() - 1);
 		}
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		AllSubSetI solution = new AllSubSetI();
+		// test case 1:
+		String input = "abc";
+		List<String> result = solution.subset(input);
+		System.out.println(result);
 	}
 
 }

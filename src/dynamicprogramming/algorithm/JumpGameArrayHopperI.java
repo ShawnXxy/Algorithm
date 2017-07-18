@@ -12,18 +12,15 @@ public class JumpGameArrayHopperI {
 	
 	public boolean jump(int[] array) {
 		if (array == null || array.length == 0) {
-			return true;
+			return false;
 		}
 		boolean[] canJump = new boolean[array.length];
-		// iterate array from the end to start
-		// last element should be reachable to end because it is already the end of the array
-		for (int i = array.length - 2; i >= 0; i--) {
-			// check is array.length - 2 can reach array.length - 1
-			if (i + array[i] >= array.length - 1) {
+		for (int i = array.length - 1; i >= 0; i--) {
+			if (array[i] + i >= array.length - 1) {
 				canJump[i] = true;
 			} else {
 				for (int j = array[i]; j >= 0; j--) {
-					if (canJump[j + i]) {
+					if (canJump[i + j]) {
 						canJump[i] = true;
 					}
 				}

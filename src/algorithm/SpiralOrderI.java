@@ -6,25 +6,25 @@ public class SpiralOrderI {
 	 * Generate an N * N 2D array in spiral order clock-wise starting from the top left corner, using the numbers of 1, 2, 3, бн, N * N in increasing order.
 	 */
 	
-	public int[][]  spiralPrint (int n) {
+	public int[][] spiralMatrix (int n) {
 		int[][] result = new int[n][n];
 		int start = 0;
 		int end = n - 1;
 		int number = 1;
 		while (start < end) {
-			// top row
+			// top left to right
 			for (int i = start; i < end; i++) {
 				result[start][i] = number++;
 			}
-			// right column
+			// right top to bottom
 			for (int i = start; i < end; i++) {
 				result[i][end] = number++;
 			}
-			// bottom row
+			// bottom right to left
 			for (int i = end; i > start; i--) {
 				result[end][i] = number++;
 			}
-			// left column
+			// left bottom to top
 			for (int i = end; i > start; i--) {
 				result[i][start] = number++;
 			}
@@ -36,13 +36,14 @@ public class SpiralOrderI {
 		}
 		return result;
 	}
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		SpiralOrderI solution = new SpiralOrderI();
 		// test case 1:
 		int n = 10;
-		int[][] result = solution.spiralPrint(n);
+		int[][] result = solution.spiralMatrix(n);
 		System.out.println(result);
 	}
 

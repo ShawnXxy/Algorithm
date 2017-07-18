@@ -25,25 +25,23 @@ public class KthSmallestInSortedMatrix {
 		public int row;
 		public int col;
 		public int key;
-		public Cell (int row, int col, int key) {
+		public Cell(int row, int col, int key) {
 			this.row = row;
 			this.col = col;
 			this.key = key;
 		}
 	}
 	
-	public int kthSmallest (int[][] matrix, int k) {
-		/**
-		 * Assume: 
-		 *  1, matrix and k are not null 
-		 *  2, m != 0 && n != 0 (m and n are rows and cols of matrix)
-		 *  3, k > 0 && k < m * n 
-		 */
-		int rows= matrix.length;
+	public int kthSmallest(int[][] matrix, int k) {
+		// assumption :
+		// 1, matrix is not null;
+		// 2, rows != 0 && cols != 0
+		// 3, k <= rows * cols.
+		int rows = matrix.length;
 		int cols = matrix[0].length;
 		PriorityQueue<Cell> minHeap = new PriorityQueue<>(k, new Comparator<Cell>() {
 			@Override
-			public int compare (Cell c1, Cell c2) {
+			public int compare(Cell c1, Cell c2) {
 				if (c1.key == c2.key) {
 					return 0;
 				}
@@ -54,12 +52,10 @@ public class KthSmallestInSortedMatrix {
 				}
 			}
 		});
-		// created a boolean array to store visited cells so to avoid a cell being generated more than once
 		boolean[][] visited = new boolean[rows][cols];
-		// starts from the first cell in matrix which is matrix[0][0]
 		minHeap.offer(new Cell(0, 0, matrix[0][0]));
 		visited[0][0] = true;
-		for (int i = 0; i < k - 1; i++) { // loop stops when i = k - 1. From 0 to k-1, k-1 is the kth
+		for (int i = 0; i < k - 1; i++) {
 			Cell cur = minHeap.poll();
 			if (cur.row + 1 < rows && !visited[cur.row + 1][cur.col]) {
 				minHeap.offer(new Cell(cur.row + 1, cur.col, matrix[cur.row + 1][cur.col]));
@@ -77,7 +73,9 @@ public class KthSmallestInSortedMatrix {
 		// TODO Auto-generated method stub
 		KthSmallestInSortedMatrix solution = new KthSmallestInSortedMatrix();
 		// test case 1
-	
+		int[][] matrix = new int[][] {
+														{},
+														};
 	}
 
 }
