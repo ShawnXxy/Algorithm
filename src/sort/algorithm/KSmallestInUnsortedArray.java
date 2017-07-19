@@ -6,8 +6,55 @@ import java.util.PriorityQueue;
 
 public class KSmallestInUnsortedArray {
 	
-	public int[] kSmallest(int[] array) {
+	public int[] kSmallest(int[] array, int k) {
 		
+		if (array == null || array.length == 0 || k > array.length) {
+			return new int[0];
+		}
+		
+		// Solution 1: minHeap
+//		PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+//		for (int i = 0; i < array.length; i++) {
+//			minHeap.offer(array[i]);
+//		}
+//		int[] result = new int[k];
+//		for (int i = 0; i < k; i++) {
+//			result[i] = minHeap.poll();
+//		}
+//		return result;
+		
+		// Solution 2: maxHeap
+		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
+
+			@Override
+			public int compare(Integer one, Integer two) {
+				// TODO Auto-generated method stub
+				if (one.equals(two)) {
+					return 0;
+				}
+				if (one > two) {
+					return -1;
+				} else {
+					return 1;
+				}
+			}
+			
+		});
+		for (int i = 0; i < array.length; i++) {
+			if (maxHeap.size() < k) {
+				maxHeap.offer(array[i]);
+			} else {
+				if (maxHeap.peek() > array[i]) {
+					maxHeap.poll();
+					maxHeap.offer(array[i]);
+				}
+			}
+		}
+		int[] result = new int[k];
+		for (int i = k - 1; i >= 0; i--) {
+			result[i] = maxHeap.poll();
+		}
+		return result;
 	}
 
 	public static void main(String[] args) {

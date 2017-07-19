@@ -11,7 +11,26 @@ public class CommonNumbersOfTwoSortedArray {
 	 * 
 	 */
 	
-
+	public List<Integer> common(int[] A, int[] B) { 
+		List<Integer> result = new ArrayList<>();
+		if (A == null || B == null || A.length == 0 || B.length == 0) {
+			return result;
+		}
+		int a = 0; 
+		int b = 0;
+		while (a < A.length && b < B.length) {
+			if (A[a] == B[b]) {
+				result.add(A[a]);
+				a++;
+				b++;
+			} else if (A[a] < B[b]) {
+				a++;
+			} else {
+				b++;
+			}
+		}
+		return result;
+	}
 	
 	
 	public static void main(String[] args) {

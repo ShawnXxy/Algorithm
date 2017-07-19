@@ -23,7 +23,6 @@ public class LargestSubarraySum {
 		return result;
 	}
 	
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LargestSubarraySum solution = new LargestSubarraySum();

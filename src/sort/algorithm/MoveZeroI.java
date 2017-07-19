@@ -8,6 +8,39 @@ public class MoveZeroI {
 	 * Move 0s to the end
 	 */
 	
+	public int[] moveZero (int[] array) {
+		if (array == null || array.length == 0) {
+			return array;
+		}
+		
+		// Solution 1: no orders
+//		int index = 0;
+//		for (int i = 0; i < array.length; i++) {
+//			index = i;
+//			for (int j = i; j < array.length; j++) {
+//				if (array[j] != 0) { // if move zero to the beginning, array[j] == 0
+//					index = j;
+//				}
+//			}
+//			int temp = array[index];
+//			array[index] = array[i];
+//			array[i] = temp;
+//		}
+//		return array;
+		
+		// solution 2: ordered
+		int index = 0;
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] != 0) {
+				array[index] = array[i];
+				index++;
+			}
+		}
+		for (int j = index; j < array.length; j++) {
+			array[j] = 0;
+		}
+		return array;
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
