@@ -2,7 +2,22 @@ package stringandhashtable.algorithm;
 
 public class ReverseString {
 	
-	
+	public String reverse (String input) {
+		if (input == null) {
+			return null;
+		}
+		char[] arrayInput = input.toCharArray();
+		int start = 0;
+		int end = input.length() - 1;
+		while (start <= end) {
+			char temp = arrayInput[start];
+			arrayInput[start] = arrayInput[end];
+			arrayInput[end] = temp;
+			start++;
+			end--;
+		}
+		return new String(arrayInput);
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
