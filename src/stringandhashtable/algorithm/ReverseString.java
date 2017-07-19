@@ -9,7 +9,7 @@ public class ReverseString {
 		char[] arrayInput = input.toCharArray();
 		int start = 0;
 		int end = input.length() - 1;
-		while (start <= end) {
+		while (start < end) {
 			char temp = arrayInput[start];
 			arrayInput[start] = arrayInput[end];
 			arrayInput[end] = temp;
@@ -23,7 +23,7 @@ public class ReverseString {
 		// TODO Auto-generated method stub
 		ReverseString solution = new ReverseString();
 		// test case 1
-		String input = "abcde";
+		String input = "abcd";
 //		int left = 0, right = input.length() - 1;
 		String result = solution.reverse(input);
 		System.out.println(result);
