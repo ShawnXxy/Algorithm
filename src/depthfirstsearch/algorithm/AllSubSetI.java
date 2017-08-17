@@ -24,14 +24,26 @@ public class AllSubSetI {
 		return result;
 	}
 	private void helper(String input, List<String> result, StringBuilder newString, int index) {
+	    
+	    
 		if (index == input.length()) {
 			result.add(newString.toString());
+			return;
 		}
-		for (int i = index; i < input.length(); i++) {
-			newString.append(input.charAt(i));
-			helper (input, result, newString, i + 1);
-			newString.deleteCharAt(newString.length() - 1);
-		}
+		
+		// Solution 1:
+//		for (int i = index; i < input.length(); i++) {
+//			newString.append(input.charAt(i));
+//			helper (input, result, newString, i + 1);
+//			newString.deleteCharAt(newString.length() - 1);
+//		}
+		
+		// Solution 2:
+		// if insert current element
+		helper(input, result, newString.append(input.charAt(index)), index + 1);
+		newString.deleteCharAt(newString.length() - 1);
+		// if not insert
+		helper(input, result, newString, index + 1);
 	}
 
 	public static void main(String[] args) {
