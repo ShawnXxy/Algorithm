@@ -25,7 +25,6 @@ public class KSmallestInUnsortedArray {
 		
 		// Solution 2: maxHeap
 		PriorityQueue<Integer> maxHeap = new PriorityQueue<>(k, new Comparator<Integer>() {
-
 			@Override
 			public int compare(Integer one, Integer two) {
 				// TODO Auto-generated method stub
@@ -38,7 +37,6 @@ public class KSmallestInUnsortedArray {
 					return 1;
 				}
 			}
-			
 		});
 		for (int i = 0; i < array.length; i++) {
 			if (maxHeap.size() < k) {
