@@ -1,5 +1,7 @@
 package sort.algorithm;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public int[] sort(int[] array) {
         if (array == null || array.length == 0) {
@@ -41,5 +43,29 @@ public class QuickSort {
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;
+    }
+    
+    public static void main(String[] args) {
+    	QuickSort solution = new QuickSort();
+		// test case 1
+		int[] array = null;
+		array = solution.sort(array);
+		System.out.println(Arrays.toString(array));
+		// test case 2
+		array = new int[0];
+		array = solution.sort(array);
+		System.out.println(Arrays.toString(array));
+		// test case 3
+		array = new int[] { 1, 2, 3, 4 };
+		array = solution.sort(array);
+		System.out.println(Arrays.toString(array));
+		// test case 4
+		array = new int[] { 4, 3, 2, 1 };
+		array = solution.sort(array);
+		System.out.println(Arrays.toString(array));
+		// test case 5
+		array = new int[] { 2, 4, 1, 5, 3 };
+		array = solution.sort(array);
+		System.out.println(Arrays.toString(array));
     }
 }
