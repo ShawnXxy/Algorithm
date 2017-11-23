@@ -16,8 +16,8 @@ public class ReverseTreeUpSideDown {
 			return root;
 		}
 		TreeNode newRoot = reverse(root.left);
+		root.left.right = root.right;
 		root.left.left = root;
-		root.right.right = root.right;
 		root.left = null;
 		root.right = null;
 		return newRoot;

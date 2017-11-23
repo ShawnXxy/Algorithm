@@ -8,7 +8,7 @@ public class KSmallestInUnsortedArray {
 	
 	public int[] kSmallest(int[] array, int k) {
 		
-		if (array == null || array.length == 0 || k > array.length) {
+		if (array == null || array.length == 0) {
 			return new int[0];
 		}
 		
