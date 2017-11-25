@@ -28,7 +28,7 @@ public class TopKFrequentWords {
 		PriorityQueue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<>(k, new Comparator<Map.Entry<String, Integer>>() {
 
 			@Override
-			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+			public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
 				// TODO Auto-generated method stub
 				return o1.getValue().compareTo(o2.getValue());
 			}

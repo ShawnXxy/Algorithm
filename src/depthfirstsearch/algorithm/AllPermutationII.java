@@ -12,7 +12,7 @@ public class AllPermutationII {
 
 	public List<String> permutation(String input) {
 		List<String> result = new ArrayList<>();
-		if (input == null) {
+		if (input == null || input.length() == 0) {
 			return result;
 		}
 		char[] inputArray = input.toCharArray();

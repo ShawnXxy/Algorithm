@@ -9,14 +9,15 @@ public class ReverseString {
 		char[] arrayInput = input.toCharArray();
 		int start = 0;
 		int end = input.length() - 1;
-		while (start < end) {
-			char temp = arrayInput[start];
-			arrayInput[start] = arrayInput[end];
-			arrayInput[end] = temp;
-			start++;
-			end--;
+		while (start <= end) {
+			swap(arrayInput, start++, end--);
 		}
 		return new String(arrayInput);
+	}
+	private void swap(char[] array, int a, int b) {
+		char temp = array[a];
+		array[a] = array[b];
+		array[b] = temp;
 	}
 
 	public static void main(String[] args) {

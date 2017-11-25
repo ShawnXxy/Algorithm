@@ -30,7 +30,7 @@ public class ReverseSentence {
 		return new String(arrayInput, 0, index);
 	}
 	private void reverse (char[] array, int start, int end) {
-		while (start < end) {
+		while (start <= end) {
 			char temp = array[start];
 			array[start] = array[end];
 			array[end] = temp;
@@ -43,7 +43,7 @@ public class ReverseSentence {
 		// TODO Auto-generated method stub
 		ReverseSentence solution = new ReverseSentence();
 		// test case 1:
-		String input = "   I love    Summer          !";
+		String input = "   I love    Summer          ! ";
 		String result = solution.reverse(input);
 		System.out.println(result);
 	}

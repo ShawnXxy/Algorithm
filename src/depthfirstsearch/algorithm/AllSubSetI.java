@@ -16,7 +16,7 @@ public class AllSubSetI {
 	
 	public List<String> subset(String input) {
 		List<String> result = new ArrayList<>();
-		if (input == null) {
+		if (input == null || input.length() == 0) {
 			return result;
 		}
 		StringBuilder newString = new StringBuilder();
@@ -49,9 +49,13 @@ public class AllSubSetI {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		AllSubSetI solution = new AllSubSetI();
-		// test case 1:
-		String input = "abc";
+		// test case 0:
+		String input = "";
 		List<String> result = solution.subset(input);
+		System.out.println(result);
+		// test case 1:
+		input = "abc";
+		result = solution.subset(input);
 		System.out.println(result);
 	}
 

@@ -14,7 +14,7 @@ public class RightShiftByN {
 		return new String(arrayInput);
 	}
 	private void reverse(char[] array, int start, int end) {
-		while (start < end) {
+		while (start <= end) {
 			char temp = array[start];
 			array[start] = array[end];
 			array[end] = temp;
